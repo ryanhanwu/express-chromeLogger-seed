@@ -5,7 +5,8 @@
 var express = require('express'),
     routes = require('./routes'),
     http = require('http'),
-    path = require('path');
+    path = require('path'),
+    myExpressChromeLogger = require("./logger/index");
 
 var app = express();
 
@@ -13,7 +14,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(require("express-chrome-logger"));
+app.use(myExpressChromeLogger);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -29,6 +30,7 @@ if('development' == app.get('env')) {
     global.express = express;
 }
 app.get('/:param1/:param2', routes.inspector, routes.index);
+app.get('/tableTest', routes.inspector, routes.tableTest);
 app.get('/*', routes.inspector, routes.index);
 
 http.createServer(app).listen(app.get('port'), function() {

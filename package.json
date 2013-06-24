@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "express": "*",
-    "jade": "*",
-    "express-chrome-logger": "latest"
+    "jade": "*"
   }
 }
