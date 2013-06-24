@@ -92,9 +92,9 @@ exports.tableTest = function (req, res, next) {
     if (MODE_DEVELOPMENT) {
         res.console.table(users);
     }
-    res.render('index', { title: 'Express Table Console' });
+    res.render('index', { title: 'Express-chromeLogger-seed Table Console' });
 };
 exports.index = function(req, res){
   
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express-chromeLogger-seed' });
 };
