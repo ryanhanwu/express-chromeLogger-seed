@@ -1,3 +1,0 @@
-[submodule "logger"]
-	path = logger
-	url = git@github.com:flyworld/express-chrome-logger.git
